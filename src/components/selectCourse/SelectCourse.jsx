@@ -1,10 +1,10 @@
 import React from "react";
 import Lottie from "lottie-react";
 import "./SelectCourse.css";
-import Programming from "/Users/ataulhossain/Desktop/ss-2.0/frontend/src/lottiefiles/Programming.json";
-import GraphicDesign from "/Users/ataulhossain/Desktop/ss-2.0/frontend/src/lottiefiles/GraphicDesign.json";
-import VideoEditing from "/Users/ataulhossain/Desktop/ss-2.0/frontend/src/lottiefiles/VideoEditing.json";
-import DigitalMarketing from "/Users/ataulhossain/Desktop/ss-2.0/frontend/src/lottiefiles/DigitalMarketing.json";
+import Programming from "../../lottiefiles/Programming.json";
+import GraphicDesign from "../../lottiefiles/GraphicDesign.json";
+import VideoEditing from "../../lottiefiles/VideoEditing.json";
+import DigitalMarketing from "../../lottiefiles/DigitalMarketing.json";
 import { Link } from "react-router-dom";
 
 function SelectCourse() {

@@ -1,8 +1,8 @@
 import React from "react";
 import "./GuranteedSuccess.css";
 import Lottie from "lottie-react";
-import guranteedSuccess from "/Users/ataulhossain/Desktop/ss-2.0/frontend/src/lottiefiles/guranteedSuccess.json";
-import fiveStar from "/Users/ataulhossain/Desktop/ss-2.0/frontend/src/lottiefiles/fiveStar.json";
+import guranteedSuccess from "../../lottiefiles/guranteedSuccess.json";
+import fiveStar from "../../lottiefiles/fiveStar.json";
 
 function GuranteedSuccess() {
   return (
