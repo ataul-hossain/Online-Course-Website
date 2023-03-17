@@ -1,0 +1,53 @@
+.guaranteed-main-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.guaranteed-row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: row-reverse;
+}
+.star-div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    flex: 0.5;
+}
+.five-star{
+    width: 250px;
+}
+.secured{
+    width: 300px;
+}
+.text-div{
+    text-align: center;
+    flex: 0.5;
+    padding: 10px 0px;
+}
+
+.text-div span{
+    font-size: 25px;
+    font-weight: 600;
+}
+.text-div h1{
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 992px) {
+    .guaranteed-row{
+        flex-direction: column;
+    }
+}

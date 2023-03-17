@@ -1,0 +1,92 @@
+.navbar {
+    top: 0;
+    position: sticky;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color:rgb(240, 235, 255);
+    z-index: 100;
+
+
+}
+.header-container {
+    width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo .link>img{
+    width: 90px;
+    cursor: pointer;
+}
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex: 0.6;
+    background-color: rgb(77, 42, 174);
+}
+.nav-items{
+    padding: 15px 20px;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(77, 42, 174);
+    
+}
+/* .nav-first {
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.nav-last{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+} */
+.right{
+display: flex;
+justify-content: center;
+align-items: center;
+width: auto;
+
+}
+
+.login-button{
+    padding: 12px 10px;
+    background-color: rgb(77, 42, 174);
+    border:  none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+
+    color: white;
+}
+.login-button:hover{
+    background-color: rgb(245, 11, 85);
+        color: white;
+
+}
+
+
+.nav-items:hover {
+    background-color: rgb(112, 84, 196);
+}
+
+@media screen and (max-width: 600px) {
+    .middle {
+        display: none;
+    }
+}

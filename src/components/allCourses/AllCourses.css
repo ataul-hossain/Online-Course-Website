@@ -1,0 +1,132 @@
+.all-courses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.cards-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    /* width: 1024px; */
+    flex-wrap: wrap;
+    gap:10px;
+    cursor: pointer;
+}
+.fix{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    flex-wrap: wrap;
+    padding: 20px 0px;
+    /* border: 1px solid black; */
+    /* background-color: rgb(231, 227, 244); */
+    width: 100%;
+    /* height: 100%; */
+
+}
+
+
+.card-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.card-img>img{
+    object-fit: contain;
+    width: 100%;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+}
+.features {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: top;
+    width: 100%;
+}
+.f-items{
+    width: 25%;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+}
+.f-items>p{
+    font-size: 12px;
+}
+.f-items:hover {
+    background-color: rgb(97, 73, 170);
+}
+.f-items{
+    background-color: rgb(112, 84, 196);
+}
+.card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgb(231, 227, 244);
+    border-top: none;
+    /* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    background-color: rgb(231, 227, 244);
+}
+.card-title>p  {
+    font-weight: 500;
+    font-size: 18px;
+    /* margin-bottom: 10px; */
+
+}
+.card-price{
+    display: flex;
+    justify-content: center;
+}
+.card-price>p{
+    font-weight: 300;
+}
+.price-per-month{
+    display: flex;
+    justify-content: center;
+}
+.price-per-month .price{
+    font-weight: 500;
+}
+
+@media screen and (max-width: 992px) 
+{
+    .card {
+        flex-basis: 50%;
+        margin: 10px;
+    }
+    .fix{
+        flex: auto;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .card {
+        flex-basis: 100%;
+        margin: 10px;
+    }
+}
+

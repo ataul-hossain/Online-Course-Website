@@ -1,0 +1,89 @@
+.demo-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid rgba(77, 42, 174, 0.239); */
+    /* border-radius: 10px; */
+    padding: 20px;
+    /* background-color: rgb(240, 235, 255); */
+    text-align: center;
+    width: 80%;
+}
+
+.demo-form button {
+    margin-top: 5px;
+    width: 100%;
+    border: none;
+    padding: 10px 0px;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(245, 11, 85);
+    cursor: pointer;
+}
+
+.demo-form button:hover {
+    background-color: rgb(204, 13, 74);
+}
+.demo-form button:disabled {
+    background-color: rgb(247, 188, 207);
+}
+
+.main-form {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+.noBorder>input {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    text-align: center;
+}
+
+.input>input {
+    width: 100%;
+    padding: 12px 10px;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+}
+.noBorder {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    padding: 5px 0px;
+    
+}
+
+
+.c-code {
+    background-color: rgb(213, 213, 213);
+    height: 100%;
+    padding: 12px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.demo-form>h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 992px) {
+    .demo-form{
+        width: 100%;
+    }
+}

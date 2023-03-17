@@ -1,0 +1,18 @@
+
+.enrolled-class>p {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+}
+.enrolled-class>h2 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 992px) {
+    .enrolled-class2{
+        width: 100%;
+    }
+}

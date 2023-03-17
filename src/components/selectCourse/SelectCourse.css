@@ -1,0 +1,123 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* margin: 50px 0px; */
+    
+}
+.wrapper>h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    padding: 30px;
+}
+.row-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+   
+}
+.row-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+.r1-col1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgb(223, 214, 252);
+    gap: 20px;
+}
+.icons{
+width: 60px;
+
+}
+
+.r1-col2>img {
+    width: 50px;
+    object-fit: contain;
+}
+.r1-col2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgb(77, 42, 174);
+    border-radius: 8px;
+    gap: 20px;
+}
+.r2-col1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgb(77, 42, 174);
+    border-radius: 8px;
+    gap: 20px;
+}
+.r2-col1>img{
+    width: 50px;
+    object-fit: contain;
+}
+
+.r2-col2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    border: 1px solid rgb(77, 42, 174);
+    border-radius: 8px;
+    gap: 20px;
+}
+.r2-col2>img {
+    width: 50px;
+    object-fit: contain;
+}
+.skillname {
+    font-size: 20px;
+    font-weight: 400;
+}
+ .r1-col1:hover {
+     background-color: rgb(240, 235, 255);cursor: pointer;
+ }
+
+ .r1-col2:hover {
+     background-color: rgb(240, 235, 255);cursor: pointer;
+ }
+
+ .r2-col1:hover {
+     background-color: rgb(240, 235, 255);cursor: pointer;
+ }
+
+ .r2-col2:hover {
+     background-color: rgb(240, 235, 255);cursor: pointer;
+ }
+@media screen and (max-width: 992px) {
+    .row-1{
+        flex-direction: column;
+    }
+    .row-2{
+        flex-direction: column;
+    }
+    .r1-col1{justify-content: space-between;}
+    .r1-col2{justify-content: space-between;}
+    .r2-col1{justify-content: space-between;}
+    .r2-col2{justify-content: space-between;}
+}
+

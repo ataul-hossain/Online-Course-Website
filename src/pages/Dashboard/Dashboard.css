@@ -1,0 +1,113 @@
+.dboard-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.dboard-main{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+
+}
+.right-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.dboardleft {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 0.2;
+    position: sticky;
+    top: 90px;
+    /* Change this value to match the height of your header */
+    padding: 10px;
+    background-color: rgb(240, 235, 255);
+    /* margin-top: 60px; */
+    /* Add this line to create space for the header */
+}
+
+
+.dboardright{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid rgb(223, 214, 252);
+    flex: 0.8;
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+}
+
+
+
+
+.enrolled-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.join-class{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+.join-class>p{font-size: 20px;
+    font-weight: 500;
+    padding: 10px;}
+.class-recording{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+
+.class-recording>p {
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 769px) {
+    .dboardleft{
+        display: none;
+    }
+       
+        .dboard-greeting{
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+        }
+                 .dboard-greeting>p {
+                    text-align: center;
+                 }
+        
+        .dboardright{
+            border: none;
+            flex: 1;
+        }
+                .enrolled-class {
+                    flex-direction: column;
+                }
+}       

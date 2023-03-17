@@ -1,0 +1,102 @@
+.home-page{
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+}
+.home-row{
+    width: 1024px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+    align-items: center;
+}
+.home-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0px;
+    padding: 0px 20px;
+    align-content: center;
+    text-align: center;
+}
+.home-left h1{
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.home-left h1 span {
+    color:rgb(245, 11, 85) ;
+    
+}
+.home-left h2 {
+    font-size: 20px;
+    font-weight: 300;
+
+
+}
+.home-left h2 span{
+    font-size: 25px;
+    font-weight: 400;
+
+}
+.home-left h3 {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
+
+
+}
+.view-courses{
+    width: 200px;
+    height: 50px;
+background-color: transparent;
+    color: black;
+    border: 1px solid rgb(77, 42, 174);
+    border-radius: 10px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.view-courses:hover {
+    background-color: rgb(245, 11, 85);
+    color: white;
+    border: 1px solid rgb(245, 11, 85);
+}
+.home-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0px;
+    width: 100%;
+
+}
+
+.marketing-msg > h2 {
+    font-size: 25px;
+    font-weight: 500;
+}
+.m2{
+    margin-bottom: 20px;
+}
+.hero-2{
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+@media screen and (min-width:992px) {
+    .home-left{flex: 1;}
+    .home-right{flex: 1;}
+}

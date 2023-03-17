@@ -1,0 +1,109 @@
+.payments-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.success-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 20px;
+    border: 1px solid rgb(240, 235, 255);
+}
+
+.course-name-payment{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+.payment-method{
+    display: flex;
+    justify-content: space-between;
+
+    flex-direction: column;
+
+}
+.payment-price{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+.pay-status{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.tx-items{
+    font-weight: 500;
+}
+
+.second-content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.first-content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.pay-status>.success{
+    background-color: rgb(40, 162, 40);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    align-self: flex-end;
+}
+.pay-status>.failed {
+    background-color: rgb(217, 0, 0);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 14px;
+    align-self: flex-end;
+}
+
+
+
+@media screen and (max-width:769px) {
+    .success-container{
+       
+        flex-direction: column;
+
+    }
+    .first-content{
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .second-content{
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+        .pay-status>.success {
+           
+            align-self: flex-start;
+        }
+    
+        .pay-status>.failed {
+           
+            align-self: flex-start;
+        }
+
+}

@@ -1,0 +1,59 @@
+.video-main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.watch-video {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 10px;
+}
+.watch-left {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex: 0.7;
+}
+.watch-right {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  flex: 0.3;
+}
+.vid-link {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.watch-video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  width: 100%;
+}
+
+.watch-video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.course-module-video {
+  height: 500px;
+  overflow-y: scroll;
+  padding: 10px;
+  border: 1px solid rgb(240, 235, 255);
+  width: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  .watch-video {
+    flex-direction: column;
+  }
+}
