@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./Header.css";
-import logo from "/Users/ataulhossain/Desktop/ss-2.0/frontend/src/images/logo.png";
+import logo from "../../images/logo.png";
 import LoginIcon from "@mui/icons-material/Login";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
