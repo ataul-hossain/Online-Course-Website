@@ -1,5 +1,5 @@
 import React from "react";
-import fivestudents from "/Users/ataulhossain/Desktop/ss-2.0/frontend/src/images/fivestudents.png";
+import fivestudents from "../../images/fivestudents.png";
 import "./Fiverperbatch.css";
 
 function Fiveperbatch() {

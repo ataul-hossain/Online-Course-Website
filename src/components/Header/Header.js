@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 
 function Header() {
-  const { user, dispatch, loading, error } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   return (
     <div className="navbar">
