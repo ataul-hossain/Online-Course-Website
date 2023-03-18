@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const gotData = await axios.get(
-        `http://localhost:8000/api/user/${user.phone}`
+        `https://vast-gray-bighorn-sheep-robe.cyclic.app/api/user/${user.phone}`
       );
       setLoad(gotData.data);
     };
@@ -43,7 +43,7 @@ function App() {
 
   const userData = load;
   const { data, loading, error } = useFetch(
-    "http://localhost:8000/api/courses"
+    "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/courses"
   );
 
   const Layout = () => {

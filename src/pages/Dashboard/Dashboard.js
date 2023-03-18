@@ -47,7 +47,11 @@ const Dashboard = ({ userData, data, loading }) => {
                   </div>
                 </div>
                 <div className="free-content">
-                  <SelectCourse />
+                  <SelectCourse
+                    userData={userData}
+                    data={data}
+                    loading={loading}
+                  />
                 </div>
               </div>
             </div>
