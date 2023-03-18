@@ -40,9 +40,11 @@ function Checkout({ user, data, loading, error }) {
             // }`,
             tran_id: `SS_${Math.floor(Math.random() * 900000 + 100000)}`,
             currency: "BDT",
-            success_url: "http://localhost:8000/api/enroll",
-            fail_url: "http://localhost:8000/api/cancelled",
-            cancel_url: `http://localhost:3000/course/${seo_slug}`,
+            success_url:
+              "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/enroll",
+            fail_url:
+              "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/cancelled",
+            cancel_url: `https://online-course-website-opal.vercel.app/course/${seo_slug}`,
             desc: "Lend Money",
             type: "json",
             opt_a: `${course.course_title}`,
