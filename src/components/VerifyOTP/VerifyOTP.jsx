@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import Register from "../Register/Register";
 import "./VerifyOTP.css";
-
+import { TailSpin } from "react-loader-spinner";
 const VerifyOTP = () => {
   const [input, setInput] = useState({
     otp: "",
@@ -15,20 +15,26 @@ const VerifyOTP = () => {
   const handleChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
+  const [loading, setLoading] = useState(false);
   const verifyOTP = async (e) => {
+    setLoading(true);
     e.preventDefault();
     if (otp.length === 4) {
       try {
         await axios
-          .post("http://localhost:8000/api/verify-otp", { phone, otp })
+          .post(
+            "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/verify-otp",
+            { phone, otp }
+          )
           .then((res) => {
             console.log(res);
             localStorage.setItem("otp", JSON.stringify(res.data));
+
             if (res.status === 200) {
               document.getElementById("verifyOTP-form").style.display = "none";
               document.getElementById("register").style.display = "block";
             }
+            setLoading(false);
           });
       } catch (error) {
         console.log(error);
@@ -51,8 +57,25 @@ const VerifyOTP = () => {
             onChange={(e) => handleChange(e)}
             id="otp"
           />
-          <button onClick={(e) => verifyOTP(e)} type="submit">
-            ভেরিফাই করুন
+          <button
+            className="btn-loading"
+            onClick={(e) => verifyOTP(e)}
+            type="submit"
+          >
+            {loading ? (
+              <TailSpin
+                height="20"
+                width="20"
+                color="white"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            ) : (
+              <p>ভেরিফাই করুন</p>
+            )}
           </button>
         </form>
       </div>

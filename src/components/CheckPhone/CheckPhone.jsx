@@ -3,8 +3,9 @@ import "./CheckPhone.css";
 import axios from "axios";
 import VerifyOTP from "../VerifyOTP/VerifyOTP";
 import Login from "../Login/Login";
-
+import { TailSpin } from "react-loader-spinner";
 const CheckPhone = () => {
+  const [loading, setLoading] = useState(false);
   const [inputData, setInputData] = useState({
     phone: "",
   });
@@ -18,16 +19,21 @@ const CheckPhone = () => {
 
   const phoneCheck = async (e) => {
     e.preventDefault();
+
     if (phone.length === 0) {
       return false;
     }
 
     try {
+      setLoading(true);
       await axios
-        .post("http://localhost:8000/api/send-otp", { phone })
+        .post("https://vast-gray-bighorn-sheep-robe.cyclic.app/api/send-otp", {
+          phone,
+        })
         .then((res) => {
           console.log(res);
           localStorage.setItem("phone", JSON.stringify(res.data));
+          setLoading(false);
 
           if (res.status === 200) {
             document.getElementById("checkPhone-form").style.display = "none";
@@ -56,8 +62,25 @@ const CheckPhone = () => {
               maxLength={11}
               id="phone"
             />
-            <button onClick={(e) => phoneCheck(e)} type="submit">
-              শুরু করুন
+            <button
+              className="btn-loading"
+              onClick={(e) => phoneCheck(e)}
+              type="submit"
+            >
+              {loading ? (
+                <TailSpin
+                  height="20"
+                  width="20"
+                  color="white"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                />
+              ) : (
+                <p>শুরু করুন</p>
+              )}
             </button>
           </form>
         </div>

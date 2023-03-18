@@ -5,7 +5,6 @@ import clock from "../../images/icons/clock.png";
 import daynight from "../../images/icons/daynight.png";
 import tick from "../../images/icons/tick.png";
 import CourseModule from "../../components/module/CourseModule";
-import DemoClassReg from "../../components/demoClassReg/DemoClassReg";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -13,6 +12,8 @@ import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel";
 
 import { useNavigate, useParams } from "react-router-dom";
 import AllCourses from "../../components/allCourses/AllCourses";
+
+import CheckPhone from "../../components/CheckPhone/CheckPhone";
 
 function Course({ user, data, loading }) {
   const { seo_slug } = useParams();
@@ -145,7 +146,7 @@ function Course({ user, data, loading }) {
               <div className="main-login-container">
                 <h1>ড্যাশবোর্ডে লগইন করুন</h1>
                 <div className="login-container">
-                  <DemoClassReg />
+                  <CheckPhone />
                 </div>
               </div>
             )}

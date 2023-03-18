@@ -24,14 +24,13 @@ import WatchVideos from "./components/WatchVideos/WatchVideos";
 import FreeContent from "./components/FreeContent/FreeContent";
 
 function App() {
+  const backendURL = "http://localhost:8000";
   const { user } = useContext(AuthContext);
   const [load, setLoad] = useState([]);
   const [url, setUrl] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const gotData = await axios.get(
-        `https://vast-gray-bighorn-sheep-robe.cyclic.app/api/user/${user.phone}`
-      );
+      const gotData = await axios.get(`${backendURL}/api/user/${user.phone}`);
       setLoad(gotData.data);
     };
     fetchData();
@@ -42,9 +41,7 @@ function App() {
   }, []);
 
   const userData = load;
-  const { data, loading, error } = useFetch(
-    "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/courses"
-  );
+  const { data, loading, error } = useFetch(`${backendURL}/api/courses`);
 
   const Layout = () => {
     return (

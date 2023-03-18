@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./Register.css";
+import { TailSpin } from "react-loader-spinner";
 
 const Register = () => {
   const [input, setInput] = useState({
@@ -20,21 +21,27 @@ const Register = () => {
   const handleChange = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+  const [loading, setLoading] = useState(false);
 
   const register = async (e) => {
+    setLoading(true);
     e.preventDefault();
     if (fullname.length > 0 && email.length > 0 && password.length > 0) {
       try {
         await axios
-          .post("http://localhost:8000/api/register", {
-            phone,
-            otp,
-            fullname,
-            email,
-            password,
-          })
+          .post(
+            "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/register",
+            {
+              phone,
+              otp,
+              fullname,
+              email,
+              password,
+            }
+          )
           .then((res) => {
             console.log(res.data);
+            setLoading(false);
             Login();
           });
       } catch (error) {
@@ -47,10 +54,13 @@ const Register = () => {
   const Login = async () => {
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("http://localhost:8000/api/login", {
-        phone,
-        password,
-      });
+      const res = await axios.post(
+        "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/login",
+        {
+          phone,
+          password,
+        }
+      );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       navigate("/dashboard");
     } catch (error) {
