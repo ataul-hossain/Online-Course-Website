@@ -24,7 +24,7 @@ import WatchVideos from "./components/WatchVideos/WatchVideos";
 import FreeContent from "./components/FreeContent/FreeContent";
 
 function App() {
-  const backendURL = "https://online-course-website-opal.vercel.app";
+  const backendURL = "https://vast-gray-bighorn-sheep-robe.cyclic.app";
   const { user } = useContext(AuthContext);
   const [load, setLoad] = useState([]);
   const [url, setUrl] = useState();
