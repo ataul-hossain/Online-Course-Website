@@ -18,6 +18,10 @@ import CheckPhone from "../../components/CheckPhone/CheckPhone";
 function Course({ user, data, loading }) {
   const { seo_slug } = useParams();
   const course = data.find((course) => course.seo_slug === seo_slug);
+  // Define a function to convert number to Bengali
+  const toBengaliNumber = (num) => {
+    return num.toLocaleString("bn-BD");
+  };
 
   const navigate = useNavigate();
   const location = window.location.href;
@@ -175,6 +179,72 @@ function Course({ user, data, loading }) {
               hide={course.course_title}
               loading={loading}
             />
+          </div>
+          <div className="sticky-div">
+            <div className="sticky-container">
+              {course.offer ? (
+                course.offer.map(
+                  (offer, i) =>
+                    offer.isOn && (
+                      <div className="bottom-bar">
+                        <div className="bar-price-container">
+                          {course.batches.map(
+                            (batch, bi) =>
+                              batch.admission_going === true && (
+                                <div className="bottom-class-start">
+                                  <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
+                                </div>
+                              )
+                          )}
+                          <div className="bar-price">
+                            <p>কোর্স ফি: </p>
+                            <strike>
+                              {toBengaliNumber(course.regular_price)}
+                            </strike>
+                            <p>{toBengaliNumber(offer.offer_price)}</p>
+                          </div>
+                        </div>
+
+                        <div className="bar-cta">
+                          <button onClick={goToCheckOut} className="bar-btn">
+                            ভর্তি হয়ে নিন
+                          </button>
+                        </div>
+                      </div>
+                    )
+                )
+              ) : (
+                <div className="bottom-bar">
+                  {course.batches.map(
+                    (batch, bi) =>
+                      batch.admission_going === true && (
+                        <div className="bottom-class-start">
+                          <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
+                        </div>
+                      )
+                  )}
+                  <div className="bar-price-container">
+                    {course.batches.map(
+                      (batch, bi) =>
+                        batch.admission_going === true && (
+                          <div className="bottom-class-start">
+                            <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
+                          </div>
+                        )
+                    )}
+                    <div className="bar-price">
+                      <p>কোর্স ফি: </p>
+                      <p>{toBengaliNumber(course.regular_price)}</p>
+                    </div>
+                  </div>
+                  <div className="bar-cta">
+                    <button onClick={goToCheckOut} className="bar-btn">
+                      ভর্তি হয়ে নিন
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>

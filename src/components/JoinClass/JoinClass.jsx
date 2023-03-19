@@ -29,11 +29,20 @@ const JoinClass = ({ userData, data }) => {
                           <p>Batch {c.opt_b}</p>
                         </div>
                         <div className="join-btn-container">
-                          <Link className="link">
-                            <button className="join-class-btn">
-                              ক্লাস জয়েন করুন
-                            </button>
-                          </Link>
+                          {course.batches.map(
+                            (batch, bi) =>
+                              batch.batch_number === c.opt_b && (
+                                <Link
+                                  to={batch.class_link}
+                                  key={bi}
+                                  className="link"
+                                >
+                                  <button className="join-class-btn">
+                                    ক্লাস জয়েন করুন
+                                  </button>
+                                </Link>
+                              )
+                          )}
                         </div>
                       </div>
                     )

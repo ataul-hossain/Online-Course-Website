@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import downArrow from "../../images/icons/downArrow.png";
 import video_play from "../../images/icons/video_play.png";
@@ -14,6 +14,7 @@ const WatchVideos = ({ user, data, userData, loading, error }) => {
     window.scrollTo(0, 0);
   }, [location]);
   const { category, seo_slug } = useParams();
+  const navigate = useNavigate();
 
   const course = data.find(
     (c, i) => c.course_category === category && c.seo_slug === seo_slug
@@ -26,6 +27,10 @@ const WatchVideos = ({ user, data, userData, loading, error }) => {
   const [videoId, setVideoId] = useState(
     courseModule[0].video[0].videoId || ""
   );
+
+  const goToCheckOut = () => {
+    navigate(`/checkout/${seo_slug}`);
+  };
 
   const toggleAccordion = (index) => {
     if (index === active) {
@@ -179,6 +184,77 @@ const WatchVideos = ({ user, data, userData, loading, error }) => {
                             closeModal={setOpenModal}
                           />
                         )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+                <div className="sticky-div">
+                  <div className="sticky-container">
+                    {course.offer ? (
+                      course.offer.map(
+                        (offer, i) =>
+                          offer.isOn && (
+                            <div className="bottom-bar">
+                              <div className="bar-price-container">
+                                {course.batches.map(
+                                  (batch, bi) =>
+                                    batch.admission_going === true && (
+                                      <div className="bottom-class-start">
+                                        <p>
+                                          ক্লাস শুরু হচ্ছে : {batch.start_date}
+                                        </p>
+                                      </div>
+                                    )
+                                )}
+                                <div className="bar-price">
+                                  <p>কোর্স ফি: </p>
+                                  <strike>
+                                    {toBengaliNumber(course.regular_price)}
+                                  </strike>
+                                  <p>{toBengaliNumber(offer.offer_price)}</p>
+                                </div>
+                              </div>
+
+                              <div className="bar-cta">
+                                <button
+                                  onClick={goToCheckOut}
+                                  className="bar-btn"
+                                >
+                                  ভর্তি হয়ে নিন
+                                </button>
+                              </div>
+                            </div>
+                          )
+                      )
+                    ) : (
+                      <div className="bottom-bar">
+                        {course.batches.map(
+                          (batch, bi) =>
+                            batch.admission_going === true && (
+                              <div className="bottom-class-start">
+                                <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
+                              </div>
+                            )
+                        )}
+                        <div className="bar-price-container">
+                          {course.batches.map(
+                            (batch, bi) =>
+                              batch.admission_going === true && (
+                                <div className="bottom-class-start">
+                                  <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
+                                </div>
+                              )
+                          )}
+                          <div className="bar-price">
+                            <p>কোর্স ফি: </p>
+                            <p>{toBengaliNumber(course.regular_price)}</p>
+                          </div>
+                        </div>
+                        <div className="bar-cta">
+                          <button onClick={goToCheckOut} className="bar-btn">
+                            ভর্তি হয়ে নিন
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>

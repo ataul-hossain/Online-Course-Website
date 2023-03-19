@@ -25,6 +25,7 @@ import FreeContent from "./components/FreeContent/FreeContent";
 
 function App() {
   const backendURL = "https://vast-gray-bighorn-sheep-robe.cyclic.app";
+  //const backendURL = "http://localhost:8000";
   const { user } = useContext(AuthContext);
   const [load, setLoad] = useState([]);
   const [url, setUrl] = useState();
