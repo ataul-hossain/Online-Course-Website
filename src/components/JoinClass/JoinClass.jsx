@@ -2,6 +2,7 @@ import React from "react";
 import "./JoinClass.css";
 
 import { Link } from "react-router-dom";
+import Sidebar from "../Sidebar/Sidebar";
 
 const JoinClass = ({ userData, data }) => {
   return (
@@ -50,6 +51,9 @@ const JoinClass = ({ userData, data }) => {
               </div>
             ))
           )}
+        </div>
+        <div className="sidebar-container-mobile">
+          <Sidebar />
         </div>
       </div>
     </div>

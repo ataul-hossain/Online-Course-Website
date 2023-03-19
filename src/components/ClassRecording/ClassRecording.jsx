@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./ClassRecording.css";
 import { Link } from "react-router-dom";
+import Sidebar from "../Sidebar/Sidebar";
 const ClassRecording = ({ userData, data }) => {
   const location = window.location.href;
   useEffect(() => {
@@ -43,6 +44,9 @@ const ClassRecording = ({ userData, data }) => {
               </div>
             ))
           )}
+        </div>{" "}
+        <div className="sidebar-container-mobile">
+          <Sidebar />
         </div>
       </div>
     </div>

@@ -55,6 +55,9 @@ const Dashboard = ({ userData, data, loading }) => {
                 </div>
               </div>
             </div>
+            <div className="sidebar-container-mobile">
+              <Sidebar />
+            </div>
           </div>
         </div>
       )}
