@@ -65,7 +65,7 @@ function Checkout({ user, data, loading, error }) {
   const getUserData = async () => {
     try {
       const data = await axios.get(
-        `http://localhost:8000/api/user/${user.phone}`
+        `https://vast-gray-bighorn-sheep-robe.cyclic.app/api/user/${user.phone}`
       );
       localStorage.setItem("user", JSON.stringify(data.data));
     } catch (error) {
