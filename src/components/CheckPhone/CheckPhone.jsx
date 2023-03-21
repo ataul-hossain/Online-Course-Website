@@ -6,6 +6,7 @@ import Login from "../Login/Login";
 import { TailSpin } from "react-loader-spinner";
 const CheckPhone = () => {
   const [loading, setLoading] = useState(false);
+  const [otpMsg, setOtpMsg] = useState("");
   const [inputData, setInputData] = useState({
     phone: "",
   });
@@ -32,8 +33,9 @@ const CheckPhone = () => {
         })
         .then((res) => {
           console.log(res);
-          localStorage.setItem("phone", JSON.stringify(res.data));
+          localStorage.setItem("phone", JSON.stringify(res.data.phone));
           setLoading(false);
+          setOtpMsg(res.data.message);
 
           if (res.status === 200) {
             document.getElementById("checkPhone-form").style.display = "none";
@@ -47,6 +49,7 @@ const CheckPhone = () => {
       console.log(error);
     }
   };
+  console.log(otpMsg);
 
   return (
     <>
@@ -62,6 +65,7 @@ const CheckPhone = () => {
               maxLength={11}
               id="phone"
             />
+
             <button
               className="btn-loading"
               onClick={(e) => phoneCheck(e)}
@@ -90,7 +94,7 @@ const CheckPhone = () => {
         </div>
 
         <div style={{ display: "none" }} id="verifyForm" className="verifyForm">
-          <VerifyOTP />
+          <VerifyOTP otpMsg={otpMsg} />
         </div>
       </div>
     </>

@@ -8,6 +8,7 @@ const Modal = ({ closeModal, user, videoId }) => {
     <>
       <div onClick={() => closeModal(false)} className="overlay"></div>
       <div className="modalContainer">
+        <h2>ফ্রি ভিডিও দেখা শুরু করতে লগইন করুন</h2>
         <CheckPhone />
       </div>
     </>

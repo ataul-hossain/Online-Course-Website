@@ -11,7 +11,7 @@ const ClassRecording = ({ userData, data }) => {
     <div>
       <div className="dboard-yourcourses r-item">
         <div className="course-wrapper">
-          {userData.enrolledCourses.length === 0 ? (
+          {!userData.enrolledCourses ? (
             <p>আপনি এখনও কোনও কোর্সে ভর্তি হননি </p>
           ) : (
             userData.enrolledCourses.map((c, x) => (
@@ -20,6 +20,7 @@ const ClassRecording = ({ userData, data }) => {
                   (course, index) =>
                     course.course_title === c.opt_a && (
                       <div key={index} className="course-details">
+                        <p>ক্লাস রেকর্ডিং</p>
                         <div className="course-img-container">
                           <img
                             className="course-img"

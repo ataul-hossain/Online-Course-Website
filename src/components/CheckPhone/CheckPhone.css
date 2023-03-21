@@ -1,56 +1,55 @@
-.mother-div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.mother-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-.checkPhone-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 20px;
-
+.checkPhone-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
 }
 
-.c-main{
-    width: 100%;
-    /* border: 1px solid rgb(215, 215, 215); */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px;
+.c-main {
+  width: 100%;
+  /* border: 1px solid rgb(215, 215, 215); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
 }
 
-.c-main>input{
-    width: 100%;
-    padding: 10px;
-    border: 1px solid rgb(77, 42, 174);
+.c-main > input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgb(77, 42, 174);
 }
-.c-main>button{
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background-color: rgb(245, 11, 85);
-    color: white;
-    cursor: pointer;
+.c-main > button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: rgb(245, 11, 85);
+  color: white;
+  cursor: pointer;
 }
-.c-main>button:hover{
-    background-color: rgb(204, 13, 74);
+.c-main > button:hover {
+  background-color: rgb(204, 13, 74);
 }
 
-.new-login{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.new-login {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
-.verifyForm{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.verifyForm {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }

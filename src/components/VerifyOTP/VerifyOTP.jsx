@@ -4,7 +4,7 @@ import { useState } from "react";
 import Register from "../Register/Register";
 import "./VerifyOTP.css";
 import { TailSpin } from "react-loader-spinner";
-const VerifyOTP = () => {
+const VerifyOTP = ({ otpMsg }) => {
   const [input, setInput] = useState({
     otp: "",
   });
@@ -56,7 +56,8 @@ const VerifyOTP = () => {
             required={true}
             onChange={(e) => handleChange(e)}
             id="otp"
-          />
+          />{" "}
+          <p id="otpMsg">{otpMsg}</p>
           <button
             className="btn-loading"
             onClick={(e) => verifyOTP(e)}

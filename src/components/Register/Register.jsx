@@ -5,7 +5,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import "./Register.css";
-import { TailSpin } from "react-loader-spinner";
 
 const Register = () => {
   const [input, setInput] = useState({
@@ -37,7 +36,8 @@ const Register = () => {
               fullname,
               email,
               password,
-            }
+            },
+            { withCredentials: true }
           )
           .then((res) => {
             console.log(res.data);
@@ -59,7 +59,8 @@ const Register = () => {
         {
           phone,
           password,
-        }
+        },
+        { withCredentials: true }
       );
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       navigate("/dashboard");

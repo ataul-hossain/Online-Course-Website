@@ -21,7 +21,7 @@ const YourCourses = ({ userData, data, loading }) => {
             </div>
             <div className="dboardright">
               <div className="right-wrapper ">
-                {userData.enrolledCourses.length > 0 ? (
+                {userData.enrolledCourses?.length > 0 ? (
                   <div className="enrolled-class">
                     <p>ভর্তি হওয়া কোর্স</p>
                     {userData.enrolledCourses.map((course, index) => (
@@ -31,24 +31,39 @@ const YourCourses = ({ userData, data, loading }) => {
                           data={data}
                           loading={loading}
                         />
+                        <div className="enrolled-class">
+                          <p>আমাদের আরও কোর্স</p>
+                          <AllCourses
+                            hide={course.opt_a}
+                            data={data}
+                            loading={loading}
+                          />
+                        </div>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <h2>আপনি এখনও কোনও কোর্সে ভর্তি হননি</h2>
-                )}
-                <div>
-                  {userData.enrolledCourses.map((course, index) => (
-                    <div key={index} className="enrolled-class">
-                      <p>আমাদের আরও কোর্স</p>
-                      <AllCourses
-                        hide={course.opt_a}
-                        data={data}
-                        loading={loading}
-                      />
+                  <div className="not-enrolled">
+                    <h2>আপনি এখনও কোনও কোর্সে ভর্তি হননি</h2>
+
+                    <div className="enrolled-class">
+                      <p>আমাদের কোর্সসমূহ </p>
+                      <AllCourses data={data} loading={loading} />
                     </div>
-                  ))}
-                </div>
+
+                    {userData.enrolledCourses.length > 0 &&
+                      userData.enrolledCourses.map((course, index) => (
+                        <div key={index} className="enrolled-class">
+                          <p>আমাদের আরও কোর্স</p>
+                          <AllCourses
+                            hide={course.opt_a}
+                            data={data}
+                            loading={loading}
+                          />
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
             </div>
             <div className="sidebar-container-mobile">

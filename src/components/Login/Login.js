@@ -32,7 +32,8 @@ function Login() {
           {
             phone,
             password,
-          }
+          },
+          { withCredentials: true }
         );
 
         dispatch({ type: "LOGIN_SUCCESS", payload: res.data });

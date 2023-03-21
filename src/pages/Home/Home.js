@@ -36,13 +36,17 @@ function Home({ user, data, loading }) {
         </div>
         {!user && (
           <div className="home-right">
+            <h2>ফ্রি শেখা শুরু করতে লগইন করুন!</h2>
             <CheckPhone />
           </div>
         )}
         <SelectCourse user={user} data={data} loading={loading} />
         <Fiveperbatch />
         <GuranteedSuccess />
-        <AllCourses data={data} loading={loading} />
+        <div className="all-courses-text">
+          <h1>আমাদের কোর্সসমূহ</h1>
+          <AllCourses data={data} loading={loading} />
+        </div>
       </div>
     </div>
   );

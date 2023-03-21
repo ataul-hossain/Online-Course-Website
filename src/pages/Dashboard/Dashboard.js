@@ -5,12 +5,26 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import DboardGreeting from "../../components/DboardGreeting/DboardGreeting";
 import SelectCourse from "../../components/selectCourse/SelectCourse";
 import { useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
+import AllCourses from "../../components/allCourses/AllCourses";
 
-const Dashboard = ({ userData, data, loading }) => {
+const Dashboard = ({ user, data, loading }) => {
+  const [userData, setUserData] = useState([]);
   const location = window.location.href;
+  const fetchUserData = async () => {
+    const res = await axios.get(`http://localhost:8000/api/user/${user.phone}`);
+    setUserData(res.data);
+  };
+  function Logout() {
+    localStorage.clear();
+    window.location.reload(); // optional: reload the page to see the changes immediately
+  }
+
   useEffect(() => {
-    window.scrollTo(0, 0);
+    fetchUserData();
   }, [location]);
+
   return (
     <div className="dboard-wrapper">
       {loading ? (
@@ -30,7 +44,6 @@ const Dashboard = ({ userData, data, loading }) => {
                 </div>
                 <div className="enrolled-class">
                   <div className="join-class">
-                    <p>ক্লাস জয়েনিং</p>
                     <JoinClass
                       data={data}
                       userData={userData}
@@ -38,7 +51,6 @@ const Dashboard = ({ userData, data, loading }) => {
                     />
                   </div>
                   <div className="class-recording">
-                    <p>ক্লাস রেকর্ডিং</p>
                     <ClassRecording
                       data={data}
                       userData={userData}
@@ -53,8 +65,28 @@ const Dashboard = ({ userData, data, loading }) => {
                     loading={loading}
                   />
                 </div>
+                <div className="your-courses">
+                  {userData.enrolledCourses?.length > 0 ? (
+                    userData.enrolledCourses.map((c, ci) => (
+                      <AllCourses
+                        hide={c.opt_a}
+                        userData={userData}
+                        data={data}
+                        loading={loading}
+                      />
+                    ))
+                  ) : (
+                    <AllCourses
+                      userData={userData}
+                      data={data}
+                      loading={loading}
+                    />
+                  )}
+                </div>
+                <button onClick={Logout}>Logout</button>
               </div>
             </div>
+
             <div className="sidebar-container-mobile">
               <Sidebar />
             </div>

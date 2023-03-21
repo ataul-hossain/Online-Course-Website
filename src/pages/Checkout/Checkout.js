@@ -8,6 +8,7 @@ import ReviewCarousel from "../../components/ReviewCarousel/ReviewCarousel";
 import "./Checkout.css";
 
 function Checkout({ user, data, loading, error }) {
+  console.log(user);
   const { seo_slug } = useParams();
   const location = window.location.href;
   useEffect(() => {
@@ -44,7 +45,7 @@ function Checkout({ user, data, loading, error }) {
               "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/enroll",
             fail_url:
               "https://vast-gray-bighorn-sheep-robe.cyclic.app/api/cancelled",
-            cancel_url: `https://online-course-website-opal.vercel.app/course/${seo_slug}`,
+            cancel_url: `https://skillshikhun.vercel.app/course/${seo_slug}`,
             desc: "Lend Money",
             type: "json",
             opt_a: `${course.course_title}`,

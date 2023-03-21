@@ -8,7 +8,7 @@ import Modal from "../Modal/Modal";
 
 import "./WatchVideos.css";
 
-const WatchVideos = ({ user, data, userData, loading, error }) => {
+const WatchVideos = ({ user, data, loading }) => {
   const location = window.location.href;
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,7 +57,6 @@ const WatchVideos = ({ user, data, userData, loading, error }) => {
     return num.toLocaleString("bn-BD");
   };
 
-  console.log(videoId);
   return (
     <>
       {loading ? (
@@ -144,7 +143,7 @@ const WatchVideos = ({ user, data, userData, loading, error }) => {
                               <div className="accordion-main-content">
                                 {item.isFree ? (
                                   item.video.map((vid, vi) => (
-                                    <div className="vid-link">
+                                    <div key={vi} className="vid-link">
                                       <p>{vid.subtitle}</p>
                                       <button
                                         onClick={() =>
@@ -194,7 +193,7 @@ const WatchVideos = ({ user, data, userData, loading, error }) => {
                       course.offer.map(
                         (offer, i) =>
                           offer.isOn && (
-                            <div className="bottom-bar">
+                            <div key={i} className="bottom-bar">
                               <div className="bar-price-container">
                                 {course.batches.map(
                                   (batch, bi) =>
@@ -231,7 +230,7 @@ const WatchVideos = ({ user, data, userData, loading, error }) => {
                         {course.batches.map(
                           (batch, bi) =>
                             batch.admission_going === true && (
-                              <div className="bottom-class-start">
+                              <div key={bi} className="bottom-class-start">
                                 <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
                               </div>
                             )
@@ -240,7 +239,7 @@ const WatchVideos = ({ user, data, userData, loading, error }) => {
                           {course.batches.map(
                             (batch, bi) =>
                               batch.admission_going === true && (
-                                <div className="bottom-class-start">
+                                <div key={bi} className="bottom-class-start">
                                   <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
                                 </div>
                               )

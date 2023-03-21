@@ -9,7 +9,7 @@ const JoinClass = ({ userData, data }) => {
     <div>
       <div className="dboard-yourcourses r-item">
         <div className="course-wrapper">
-          {userData.enrolledCourses.length === 0 ? (
+          {userData.enrolledCourses === undefined ? (
             <p>আপনি এখনও কোনও কোর্সে ভর্তি হননি </p>
           ) : (
             userData.enrolledCourses.map((c, x) => (
@@ -18,6 +18,7 @@ const JoinClass = ({ userData, data }) => {
                   (course, index) =>
                     course.course_title === c.opt_a && (
                       <div key={index} className="course-details">
+                        <p>ক্লাস জয়েনিং</p>
                         <div className="course-img-container">
                           <img
                             className="course-img"

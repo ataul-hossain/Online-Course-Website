@@ -186,7 +186,7 @@ function Course({ user, data, loading }) {
                 course.offer.map(
                   (offer, i) =>
                     offer.isOn && (
-                      <div className="bottom-bar">
+                      <div key={i} className="bottom-bar">
                         <div className="bar-price-container">
                           {course.batches.map(
                             (batch, bi) =>
@@ -218,7 +218,7 @@ function Course({ user, data, loading }) {
                   {course.batches.map(
                     (batch, bi) =>
                       batch.admission_going === true && (
-                        <div className="bottom-class-start">
+                        <div key={bi} className="bottom-class-start">
                           <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
                         </div>
                       )
@@ -227,7 +227,7 @@ function Course({ user, data, loading }) {
                     {course.batches.map(
                       (batch, bi) =>
                         batch.admission_going === true && (
-                          <div className="bottom-class-start">
+                          <div key={bi} className="bottom-class-start">
                             <p>ক্লাস শুরু হচ্ছে : {batch.start_date}</p>
                           </div>
                         )
