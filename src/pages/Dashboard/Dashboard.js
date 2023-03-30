@@ -13,7 +13,9 @@ const Dashboard = ({ user, data, loading }) => {
   const [userData, setUserData] = useState([]);
   const location = window.location.href;
   const fetchUserData = async () => {
-    const res = await axios.get(`http://localhost:8000/api/user/${user.phone}`);
+    const res = await axios.get(
+      `https://vast-gray-bighorn-sheep-robe.cyclic.app/api/user/${user.phone}`
+    );
     setUserData(res.data);
   };
   function Logout() {

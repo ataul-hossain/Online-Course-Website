@@ -71,37 +71,41 @@ const Register = () => {
 
   return (
     <>
-      <div className="register-form">
-        <form className="c-main" action="">
-          <input
-            type="text"
-            name="fullname"
-            placeholder="আপনার ভাল নাম লিখুন"
-            required={true}
-            onChange={(e) => handleChange(e)}
-            id="fullname"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="আপনার ইমেইল লিখুন"
-            required={true}
-            onChange={(e) => handleChange(e)}
-            id="email"
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="পাসওয়ার্ড সিলেক্ট করুন"
-            required={true}
-            onChange={(e) => handleChange(e)}
-            id="password"
-          />
-          <button onClick={(e) => register(e)} type="submit">
-            ভেরিফাই করুন
-          </button>
-        </form>
-      </div>
+      {loading ? (
+        "Loading"
+      ) : (
+        <div className="register-form">
+          <form className="c-main" action="">
+            <input
+              type="text"
+              name="fullname"
+              placeholder="আপনার ভাল নাম লিখুন"
+              required={true}
+              onChange={(e) => handleChange(e)}
+              id="fullname"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="আপনার ইমেইল লিখুন"
+              required={true}
+              onChange={(e) => handleChange(e)}
+              id="email"
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="পাসওয়ার্ড সিলেক্ট করুন"
+              required={true}
+              onChange={(e) => handleChange(e)}
+              id="password"
+            />
+            <button onClick={(e) => register(e)} type="submit">
+              ভেরিফাই করুন
+            </button>
+          </form>
+        </div>
+      )}
     </>
   );
 };
